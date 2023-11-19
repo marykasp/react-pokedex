@@ -2,7 +2,7 @@ import "./topbar.css";
 import pokeball from "../../assets/blackpokeball.png";
 import pokeballcolor from "../../assets/pokeball.png";
 
-const Topbar = () => {
+const Topbar = ({ handleSearch, query }) => {
   return (
     <div className="title">
       <div className="title__left">
@@ -26,6 +26,14 @@ const Topbar = () => {
           </div>
         </div>
       </div>
+      <form action="">
+        <input
+          type="text"
+          placeholder="search"
+          value={query}
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+      </form>
       <p style={{ color: "white" }}>A -&gt; Z</p>
     </div>
   );

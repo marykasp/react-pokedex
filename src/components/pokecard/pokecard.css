@@ -48,7 +48,7 @@
   height: 75vh;
   left: 10%;
   bottom: 10%;
-  z-index: 10;
+  z-index: 2;
 }
 
 .show > img {
@@ -105,8 +105,7 @@
 .base-stats {
   display: flex;
   width: 100%;
-  background: #5a5a58;
-
+  background-color: rgb(241, 238, 238);
   border-radius: 10px;
 }
 
@@ -120,7 +119,7 @@
   font-weight: 500;
   text-transform: capitalize;
   line-height: 45px;
-  color: white;
+  color: #212121;
 }
 
 .stats:nth-child(1),
