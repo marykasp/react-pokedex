@@ -8,4 +8,44 @@
   height: 100%;
   align-items: center;
   justify-content: space-evenly;
+  background: linear-gradient(115deg, #fff 48%, #f3533b 48% 55%, #fb7248 55%);
+}
+
+.pokemon-modal-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.pokemon-modal-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 450px;
+  height: 500px;
+  margin: 10px 0;
+}
+
+.pokeball-title {
+  filter: invert(0);
+}
+
+.base-stats {
+  border-radius: 0;
+  background-color: #212121;
+}
+
+.base-stats .stats {
+  color: white;
 }
