@@ -1,7 +1,9 @@
-import "./pokecard.css";
-import pokeball from "../../assets/pokeball.png";
 import { useState } from "react";
+
+import pokeball from "../../assets/pokeball.png";
 import Modal from "../modal";
+import { typeColor } from "../../constants/colors";
+import "./pokecard.css";
 
 const PokemonCard = ({
   pokemonStats,
@@ -27,7 +29,12 @@ const PokemonCard = ({
     <div className="container">
       {isShown && (
         <div className="show">
-          <div className="stat-container-title">
+          <div
+            className="stat-container-title"
+            style={{
+              background: `linear-gradient(135deg, ${typeColor[type]} 40%, black 40%)`,
+            }}
+          >
             <img src={image} alt={name} className="image-title" />
             <p style={{ width: "180px", color: "black" }}>No. {id}</p>
             <p>{name}</p>
@@ -42,11 +49,13 @@ const PokemonCard = ({
           <div style={{ display: "flex", width: "100%" }}>
             <div className="stats-left">
               <p>Type</p>
+              <p>Color</p>
               <p>Height</p>
               <p>Weight</p>
             </div>
             <div className="stats-right">
               <p>{type}</p>
+              <p>{typeColor[type]}</p>
               <p>{pokemonStats.height}0 cm</p>
               <p>{pokemonStats.weight} lbs</p>
             </div>
