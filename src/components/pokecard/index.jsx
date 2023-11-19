@@ -49,13 +49,11 @@ const PokemonCard = ({
           <div style={{ display: "flex", width: "100%" }}>
             <div className="stats-left">
               <p>Type</p>
-              <p>Color</p>
               <p>Height</p>
               <p>Weight</p>
             </div>
             <div className="stats-right">
               <p>{type}</p>
-              <p>{typeColor[type]}</p>
               <p>{pokemonStats.height}0 cm</p>
               <p>{pokemonStats.weight} lbs</p>
             </div>

@@ -105,10 +105,25 @@
 .base-stats {
   display: flex;
   width: 100%;
-  background: #fff;
+  background: #5a5a58;
+
+  border-radius: 10px;
 }
 
 .base-stats > div {
   text-align: center;
   width: 100%;
+}
+
+.stats {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 45px;
+  color: white;
+}
+
+.stats:nth-child(1),
+.stats:nth-child(2) {
+  border-bottom: 1px solid white;
 }
