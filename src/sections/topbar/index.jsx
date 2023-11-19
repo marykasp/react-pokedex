@@ -1,6 +1,6 @@
 import "./topbar.css";
-import pokeball from "../assets/blackpokeball.png";
-import pokeballcolor from "../assets/pokeball.png";
+import pokeball from "../../assets/blackpokeball.png";
+import pokeballcolor from "../../assets/pokeball.png";
 
 const Topbar = () => {
   return (
