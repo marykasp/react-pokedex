@@ -32,7 +32,7 @@ const PokemonCard = ({
           <div
             className="stat-container-title"
             style={{
-              background: `linear-gradient(135deg, ${typeColor[type]} 40%, black 40%)`,
+              background: `linear-gradient(135deg, ${typeColor[type].main} 40%, black 40%)`,
             }}
           >
             <img src={image} alt={name} className="image-title" />

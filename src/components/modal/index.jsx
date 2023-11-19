@@ -17,7 +17,7 @@ const Modal = ({
     <div
       className="pokemon-modal"
       style={{
-        background: `linear-gradient(115deg, #fff 48%, ${typeColor[type]} 48% 55% )`,
+        background: `linear-gradient(115deg, #fff 48%, ${typeColor[type].main} 48% 55%, ${typeColor[type].light} 55% )`,
       }}
     >
       <div onClick={handleClose} className="pokemon-modal-close">
@@ -34,7 +34,7 @@ const Modal = ({
         <div
           className="stat-container-title"
           style={{
-            background: `linear-gradient(135deg, ${typeColor[type]} 40%, black 40%)`,
+            background: `linear-gradient(135deg, ${typeColor[type].main} 40%, black 40%)`,
           }}
         >
           <img src={image} alt={name} className="image-title" />
