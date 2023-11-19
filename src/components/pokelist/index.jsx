@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PokemonCard from "../pokecard";
 import "./pokelist.css";
 
 const PokeList = () => {
@@ -18,6 +19,7 @@ const PokeList = () => {
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`,
         );
         const pokemonData = await res.json();
+        // need to use prevState since this is inside a forEach loop so the state is ot yet set
         setAllPokemons((currentList) => [...currentList, pokemonData]);
         await allPokemons.sort((a, b) => a.id - b.id);
       });
@@ -32,10 +34,26 @@ const PokeList = () => {
   }, []);
 
   return (
-    <div>
-      {allPokemons.map((pokemon) => {
-        return <p>{pokemon.name}</p>;
-      })}
+    <div className="app-container">
+      <div className="pokemon-container">
+        <div className="all-container">
+          {allPokemons.map((pokemon, idx) => (
+            <PokemonCard
+              key={`${pokemon.id}-${idx}`}
+              id={pokemon.id.toString()}
+              image={pokemon.sprites.other["official-artwork"].front_default}
+              name={pokemon.name.replace(/^./, (str) => str.toUpperCase())}
+              type={pokemon.types[0].type.name}
+              // get an array of base stats and then return first 3
+              stats={pokemon.stats.map((stat) => stat.base_stat).slice(0, 3)}
+              statsName={pokemon.stats
+                .map((stat) => stat.stat.name)
+                .slice(0, 3)}
+              pokemonStats={pokemon}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
