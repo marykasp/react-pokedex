@@ -5,11 +5,17 @@ import { useState, useEffect } from "react";
 
 const Pokemon = () => {
   const [allPokemons, setAllPokemons] = useState([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = (query) => {
-    console.log(query);
-    setSearchQuery(query);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const newQuery = e.target.value.toLowerCase().trim();
+    setSearchQuery(newQuery);
+    const filteredPokemon = allPokemons.filter((pokemon) =>
+      pokemon.name.includes(newQuery),
+    );
+    setFilteredPokemon(filteredPokemon);
   };
 
   const getAllPokemons = async () => {
@@ -28,6 +34,8 @@ const Pokemon = () => {
         const pokemonData = await res.json();
         // need to use prevState since this is inside a forEach loop so the state is ot yet set
         setAllPokemons((currentList) => [...currentList, pokemonData]);
+        // update the filtered Pokemon state to have when component initially renders
+        setFilteredPokemon((currentList) => [...currentList, pokemonData]);
         await allPokemons.sort((a, b) => a.id - b.id);
       });
     }
@@ -43,7 +51,7 @@ const Pokemon = () => {
   return (
     <>
       <Topbar handleSearch={handleSearch} query={searchQuery} />
-      <PokeList pokemons={allPokemons} />
+      <PokeList pokemons={filteredPokemon} />
       <Bottombar />
     </>
   );

@@ -29,15 +29,15 @@ const Topbar = ({ handleSearch, query }) => {
       </div>
       <div className="search-box">
         <form action="">
+          <MdSearch />
           <input
             type="text"
             placeholder="search"
             id="search-input"
             name="pokemon"
             value={query}
-            onChange={(e) => handleSearch(e.target.value)}
+            onChange={(e) => handleSearch(e)}
           />
-          <MdSearch />
         </form>
       </div>
       <p style={{ color: "white" }}>A -&gt; Z</p>
