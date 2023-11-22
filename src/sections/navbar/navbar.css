@@ -1,0 +1,50 @@
+nav {
+  display: grid;
+  grid-template-columns: 5rem auto 5rem;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  height: 85px;
+  background-color: rgba(4, 6, 20, 0.85);
+}
+
+.nav-links {
+  margin: 0px;
+  padding: 0 20rem;
+}
+
+.nav-links ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+.nav-links li {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+}
+
+.nav-links li a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block svg {
+  color: white;
+  font-size: 2rem;
+}
+
+.block img {
+  cursor: pointer;
+  height: 3rem;
+}
