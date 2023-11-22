@@ -1,19 +1,11 @@
 import { useState } from "react";
 
-import pokeball from "../../assets/pokeball.png";
+import PokeListItem from "../pokelistitem";
 import Modal from "../modal";
 import { typeColor } from "../../constants/colors";
 import "./pokecard.css";
 
-const PokemonCard = ({
-  pokemonStats,
-  id,
-  image,
-  name,
-  type,
-  stats,
-  statsName,
-}) => {
+const Pokemon = ({ pokemonStats, id, image, name, type, stats, statsName }) => {
   const [isShown, setIsShown] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -23,6 +15,10 @@ const PokemonCard = ({
 
   const handleModalClose = () => {
     setModalIsOpen(false);
+  };
+
+  const handleCardShown = (boolean) => {
+    setIsShown(boolean);
   };
 
   return (
@@ -62,26 +58,13 @@ const PokemonCard = ({
           </div>
         </div>
       )}
-      {/* small list information - make separate component */}
-      <div
-        className="right"
-        onClick={handleModalOpen}
-        onMouseOver={() => setIsShown(true)}
-        onMouseOut={() => setIsShown(false)}
-      >
-        <img
-          src={image}
-          alt={name}
-          style={{ maxHeight: "50px", marginRight: "10px", width: "50px" }}
-        />
-        <p style={{ width: "270px" }}>No. {id}</p>
-        <p>{name}</p>
-        <img
-          src={pokeball}
-          alt="pokeball"
-          style={{ marginLeft: "auto", width: "40px" }}
-        />
-      </div>
+      <PokeListItem
+        name={name}
+        image={image}
+        id={id}
+        handleModalOpen={handleModalOpen}
+        handleShown={handleCardShown}
+      />
       {modalIsOpen && (
         <Modal
           id={id}
@@ -98,4 +81,4 @@ const PokemonCard = ({
   );
 };
 
-export default PokemonCard;
+export default Pokemon;

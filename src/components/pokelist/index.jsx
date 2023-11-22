@@ -1,4 +1,4 @@
-import PokemonCard from "../pokecard";
+import Pokemon from "../pokemon";
 import "./pokelist.css";
 
 const PokeList = ({ pokemons }) => {
@@ -6,7 +6,7 @@ const PokeList = ({ pokemons }) => {
     <div className="pokemon-container">
       <div className="all-container">
         {pokemons.map((pokemon, idx) => (
-          <PokemonCard
+          <Pokemon
             key={`${pokemon.id}-${idx}`}
             id={pokemon.id.toString()}
             image={pokemon.sprites.other["official-artwork"].front_default}
