@@ -121,6 +121,11 @@
   text-align: center;
 }
 
+.stats-name p {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 .stats span {
   color: #404060;
   text-align: center;

@@ -1,8 +1,9 @@
 nav {
   display: grid;
   grid-template-columns: 5rem auto 5rem;
+  margin: 0 20px;
   align-items: center;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   height: 85px;
   background-color: rgba(4, 6, 20, 0.85);
 }
@@ -36,7 +37,12 @@ nav {
 .block {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.block p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .block svg {

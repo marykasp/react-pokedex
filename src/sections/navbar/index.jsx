@@ -45,6 +45,7 @@ const Navbar = () => {
     <nav>
       <div className="block">
         <img src={pokeballIcon} alt="pokeball icon" />
+        <p>Pokedex</p>
       </div>
       <div className="nav-links">
         <ul>

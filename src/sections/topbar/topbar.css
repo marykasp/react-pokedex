@@ -38,10 +38,8 @@
 .seen {
   display: flex;
   align-items: center;
-  background: rgba(86, 84, 84, 0.5);
   border-radius: 10px;
   margin-left: 20px;
-  color: white;
 }
 
 /* Search Input */

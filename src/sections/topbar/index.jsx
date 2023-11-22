@@ -7,7 +7,6 @@ const Topbar = ({ handleSearch, query }) => {
   return (
     <div className="title">
       <div className="title__left">
-        <p>Pokedex</p>
         <div className="caught-seen">
           <div className="caught">
             <img
