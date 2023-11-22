@@ -42,7 +42,7 @@ const Pokemon = () => {
 
   return (
     <>
-      {/* <Topbar handleSearch={handleSearch} query={searchQuery} /> */}
+      <Topbar handleSearch={handleSearch} query={searchQuery} />
       <PokeList pokemons={allPokemons} />
       <Bottombar />
     </>

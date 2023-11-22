@@ -1,6 +1,7 @@
 import "./topbar.css";
 import pokeball from "../../assets/blackpokeball.png";
 import pokeballcolor from "../../assets/pokeball.png";
+import { MdSearch } from "react-icons/md";
 
 const Topbar = ({ handleSearch, query }) => {
   return (
@@ -26,14 +27,19 @@ const Topbar = ({ handleSearch, query }) => {
           </div>
         </div>
       </div>
-      <form action="">
-        <input
-          type="text"
-          placeholder="search"
-          value={query}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-      </form>
+      <div className="search-box">
+        <form action="">
+          <input
+            type="text"
+            placeholder="search"
+            id="search-input"
+            name="pokemon"
+            value={query}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+          <MdSearch />
+        </form>
+      </div>
       <p style={{ color: "white" }}>A -&gt; Z</p>
     </div>
   );

@@ -1,6 +1,5 @@
 import { typeColor } from "../../constants/colors";
 import pokeball from "../../assets/pokeball.png";
-import "../pokecard/pokecard.css";
 import "./modal.css";
 
 const Modal = ({

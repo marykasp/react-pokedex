@@ -27,6 +27,19 @@
   cursor: pointer;
 }
 
+.stat-container-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-left: -5%;
+  padding: 0 10px;
+  width: 110%;
+  height: 65px;
+  border-radius: 5px;
+}
+
 .pokemon-modal-info {
   display: flex;
   align-items: center;
@@ -37,15 +50,64 @@
   margin: 10px 0;
 }
 
-.pokeball-title {
-  filter: invert(0);
-}
-
 .base-stats {
   border-radius: 0;
   background-color: #212121;
+  display: flex;
+  width: 100%;
 }
 
 .base-stats .stats {
   color: white;
+}
+
+.image-title {
+  width: 45px;
+  /* min-height: 60px; */
+  margin-right: 10px;
+}
+
+.pokeball-title {
+  width: 40px;
+  margin-left: auto;
+  filter: invert(1);
+}
+
+.stats-left,
+.stats-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-size: 20px;
+}
+
+.stats-left > p,
+.stats-right > p {
+  font-size: 20px;
+  font-weight: 500px;
+  text-transform: capitalize;
+  padding: 10px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.stats-left {
+  background-color: rgb(241, 238, 238);
+}
+
+.base-stats > div {
+  text-align: center;
+  width: 100%;
+}
+
+.stats {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 45px;
+  color: #212121;
+}
+
+.stats:nth-child(1),
+.stats:nth-child(2) {
+  border-bottom: 1px solid white;
 }

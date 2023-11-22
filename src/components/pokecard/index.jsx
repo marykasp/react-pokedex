@@ -28,49 +28,35 @@ const PokemonCard = ({
   return (
     <div className="container">
       {isShown && (
-        <div className="show">
-          <div
-            className="stat-container-title"
-            style={{
-              background: `linear-gradient(135deg, ${typeColor[type].main} 40%, black 40%)`,
-            }}
-          >
-            <img src={image} alt={name} className="image-title" />
-            <p style={{ width: "180px", color: "black" }}>No. {id}</p>
-            <p>{name}</p>
-            <img
-              src={pokeball}
-              alt="pokeball"
-              className="pokeball-title"
-              style={{ width: "40px" }}
-            />
+        <div
+          className="pokemon-card"
+          style={{
+            background: `radial-gradient(circle at 50% 0%, ${typeColor[type].main} 36%, #fff 36%)`,
+          }}
+        >
+          <div className="info">
+            <p className="hp">
+              <span>HP</span> {stats[0]}
+            </p>
+            <p className="pokemon-id">
+              <span>#</span>
+              {id}
+            </p>
           </div>
-          <img src={image} alt={name} />
-          <div style={{ display: "flex", width: "100%" }}>
-            <div className="stats-left">
-              <p>Type</p>
-              <p>Height</p>
-              <p>Weight</p>
-            </div>
-            <div className="stats-right">
-              <p>{type}</p>
-              <p>{pokemonStats.height}0 cm</p>
-              <p>{pokemonStats.weight} lbs</p>
-            </div>
-          </div>
-          <div className="base-stats">
-            <div>
-              {statsName.map((stat, idx) => (
-                <p className="stats" key={`${stat}-${idx}`}>
-                  {stat}
-                </p>
+          <img src={image} alt="" />
+          <h2 className="pokemon-name">{name}</h2>
+          <div className="types"></div>
+          <div className="stats">
+            <div className="stats-value">
+              {stats.map((stat, idx) => (
+                <div key={`stat-${idx}`}>
+                  <span>{stat}</span>
+                </div>
               ))}
             </div>
-            <div>
-              {stats.map((stat, idx) => (
-                <p className="stats" key={`stat-type-${idx}`}>
-                  {stat}
-                </p>
+            <div className="stats-name">
+              {statsName.map((statName, idx) => (
+                <p key={`stats-name-${idx}`}>{statName}</p>
               ))}
             </div>
           </div>
